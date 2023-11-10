@@ -4,7 +4,7 @@ import io
 import hashlib
 import requests
 import shutil
-
+from PIL import Image
 
 version = "1.8.3"
 
@@ -46,7 +46,7 @@ def gen_file_sha256(filname):
 
 
 # get preview image
-def download_file(url, path):
+def download_file(url, path:str):
     printD("Downloading file from: " + url)
     # get file
     r = requests.get(url, stream=True, headers=def_headers, proxies=proxies)
@@ -56,9 +56,13 @@ def download_file(url, path):
         return
     
     # write to file
-    with open(os.path.realpath(path), 'wb') as f:
-        r.raw.decode_content = True
-        shutil.copyfileobj(r.raw, f)
+    if path[path.rindex('.'):].lower() in ['.png','.jpeg','.jpg','.webp']:
+        image = Image.open(r.raw)
+        image.save(path)
+    else:
+        with open(os.path.realpath(path), 'wb') as f:
+            r.raw.decode_content = True
+            shutil.copyfileobj(r.raw, f)
 
     printD("File downloaded to: " + path)
 
