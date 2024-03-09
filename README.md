@@ -10,8 +10,11 @@ check here for Civitai Helper 2's update:
 # Notice
 **This extension request latest SD webui v1.6.x, update it before using this extension. And also re-lanuch SD webui after installing(not just reload UI). If you have an issue, check console log window's detail and read [common issue](#common-issue) part**   
 
-**You can also try following fork of this project, which keeps updating when I'm busy on other projects.**  
+**You can also try following forks of this project, which is updating when I'm busy on other projects.**  
 [https://github.com/zixaphir/Stable-Diffusion-Webui-Civitai-Helper](https://github.com/zixaphir/Stable-Diffusion-Webui-Civitai-Helper)  
+or   
+[https://github.com/blue-pen5805/Stable-Diffusion-Webui-Civitai-Helper](https://github.com/blue-pen5805/Stable-Diffusion-Webui-Civitai-Helper)
+
 
 **Also, invokeAI 3.x and ComfyUI are wonderful choices for SD. Try them.**  
 
@@ -225,7 +228,17 @@ Since v1.5.5, we've already optimized the SHA256 function to the top. So the onl
 
 
 
-# Change Log
+# Change Log3
+## v1.10.2
+* Bring back this addon's green refresh button to SD webui v1.8.x
+
+## v1.10.1
+* Handle model path cases for linux
+
+## v1.10.0
+* Support SD webui v1.8.x
+* With SD webui v1.8.x, this extension's refresh function is added to Official Extra Network's refresh button. There is no need another green fresh button anymore.
+
 ## v1.9.1
 * Ignore video preview from civitai
 
